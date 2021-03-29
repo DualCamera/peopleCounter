@@ -45,7 +45,7 @@ w = camera.get(3)
 h = camera.get(4)
 frameArea = h*w
 areaTH = frameArea/250
-print('Area Threshold', areaTH)
+print('Area Threshold %s' % areaTH)
 
 #Lineas de entrada/salida
 line_up = int(2*(h/5))
@@ -54,8 +54,8 @@ line_down   = int(3*(h/5))
 up_limit =   int(1*(h/5))
 down_limit = int(4*(h/5))
 
-print("Red line y:",str(line_down))
-print("Blue line y:", str(line_up))
+print("Red line y: %s" % str(line_down))
+print("Blue line y: %s" % str(line_up))
 line_down_color = (255,0,0)
 line_up_color = (0,0,255)
 pt1 =  [0, line_down];
@@ -126,8 +126,8 @@ for image in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
         mask2 = cv2.morphologyEx(mask2, cv2.MORPH_CLOSE, kernelCl)
     except:
         print('EOF')
-        print('UP:',cnt_up)
-        print('DOWN:',cnt_down)
+        print('UP:%s' % cnt_up)
+        print('DOWN:%s' % cnt_down)
         break
 
     #################
@@ -159,13 +159,13 @@ for image in camera.capture_continuous(rawCapture, format="bgr", use_video_port=
                         i.updateCoords(cx,cy)   #actualiza coordenadas en el objeto and resets age
                         if i.going_UP(line_down,line_up) == True:
                             cnt_up += 1;
-                            print("ID:",i.getId(),'crossed going up at',time.strftime("%c"))
+                            print("ID: %s crossed going up at %s" % (i.getId(),time.strftime("%c")))
                             date = datetime.datetime.today().strftime("%Y%m%d")
                             hour = datetime.datetime.today().strftime("%H%M%S")
                             add_field(date,hour,cnt_up,cnt_down)
                         elif i.going_DOWN(line_down,line_up) == True:
                             cnt_down += 1;
-                            print("ID:",i.getId(),'crossed going down at',time.strftime("%c"))
+                            print("ID: %s crossed going up at %s" % (i.getId(),time.strftime("%c")))
                             date = datetime.datetime.today().strftime("%Y%m%d")
                             hour = datetime.datetime.today().strftime("%H%M%S")
                             add_field(date,hour,cnt_up,cnt_down)
