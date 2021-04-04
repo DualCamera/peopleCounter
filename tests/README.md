@@ -6,16 +6,20 @@
 * Raspberry Pi OS Lite (https://www.raspberrypi.org/software/operating-systems/)
 * OpenCV
 
-### Expand filesystem
-
 ### Dependencies
 
 $ sudo apt update && sudo apt dist-upgrade
+
 $ sudo apt install libgtk-3-0
+
 $ sudo apt install libavcodec58 libavformat58
+
 $ sudo apt install liblapack3
+
 $ sudo apt install libwebp6 libtiff5 libopenjp2-7 
+
 $ sudo apt install libilmbase23 libopenexr23 libswscale5 libatlas3-base
+
 $ sudo apt install python3-venv
 
 ### Python virtual environment and OpenCV
