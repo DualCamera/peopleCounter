@@ -52,7 +52,9 @@ def main():
         # RETR_EXTERNAL returns only extreme outer flags. All child contours are left behind.
         contours0, hierarchy = cv2.findContours(mask,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
 
-        print('contours ',contours0)
+        # Print contours if exist
+        if contours0:
+            print('contours ',contours0)
 
         #Waits for a user input to quit the application
         if cv2.waitKey(1) & 0xFF == ord('q'):
