@@ -15,12 +15,18 @@ def main():
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
+    #Substractor de fondo
+    fgbg = cv2.createBackgroundSubtractorMOG2(detectShadows = True)
+
     while(True): 
         # Capture frame-by-frame
         ret, frame = cap.read()
 
+        #Aplica substraccion de fondo
+        fgmask = fgbg.apply(frame)
+
         # Display the resulting frame
-        cv2.imshow('original',frame)
+        cv2.imshow('background',fgmask)
 
         #Waits for a user input to quit the application
         if cv2.waitKey(1) & 0xFF == ord('q'):

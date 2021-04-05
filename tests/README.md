@@ -1,5 +1,10 @@
 # Experiments
 
+* test1.py : PiCamera opening direct through OpenCV and show video in a window
+* test2.py : Substract background from video capture
+* test3.py : Reduce shadows
+* test4.py : Get contours
+
 ## Requirements
 
 * Raspberry Pi 3 Model B v1.2
@@ -32,3 +37,11 @@ $ pip install --upgrade pip
 OpenCV will be installed on the virtual environment, as follows:
 
 $ pip3 install opencv-python
+
+### Run tests
+
+Once the environment is set and working, to run test just execute:
+
+$ .venv/bin/python test#.py
+
+Where # is the number of test that you want
